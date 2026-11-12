@@ -31,7 +31,6 @@ h1{font-size:clamp(32px,4.4vw,50px);line-height:1.15;font-weight:500;margin:0 0 
 .hero .cta{display:flex;gap:14px;flex-wrap:wrap}
 .stage{position:relative;z-index:2}
 .stage svg{width:100%;height:auto;display:block;overflow:visible}
-.bubble{position:absolute;bottom:-20px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);animation:rise linear infinite;z-index:2}
 @keyframes rise{to{transform:translateY(-700px);opacity:0}}
 .dirt{animation:dirt 8s ease-in-out infinite}
 .foam{animation:foam 8s ease-in-out infinite}
@@ -130,7 +129,7 @@ nav{display:none}
 .fgrid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:520px){.cards{grid-template-columns:1fr}.btn.sm.top{display:none}}
-@media(prefers-reduced-motion:reduce){.bubble,.glint,.wash{display:none}.dirt,.foam,.drip{animation:none}.dirt{transform:translateX(860px)}.foam{opacity:0}.sheen{animation:none;transform:translateX(900px)}}
+@media(prefers-reduced-motion:reduce){.glint,.wash{display:none}.dirt,.foam,.drip{animation:none}.dirt{transform:translateX(860px)}.foam{opacity:0}.sheen{animation:none;transform:translateX(900px)}}
 </style>
 </head>
 <body>
@@ -263,9 +262,6 @@ c.setAttribute('cx',r(-760,40));c.setAttribute('cy',r(80,240));c.setAttribute('r
 c.setAttribute('fill','#fff');c.setAttribute('fill-opacity',r(.5,.95));c.setAttribute('stroke','#cfd8e3');c.setAttribute('stroke-width',1);
 foam.appendChild(c)}
 var stage=document.getElementById('stage');
-for(i=0;i<14;i++){c=document.createElement('i');c.className='bubble';var s=r(8,24);
-c.style.cssText='width:'+s+'px;height:'+s+'px;left:'+r(0,95)+'%;animation-duration:'+r(7,13)+'s;animation-delay:-'+r(0,12)+'s';
-stage.appendChild(c)}
 var f=document.getElementById('bf'),dt=document.getElementById('bdate'),addr=document.getElementById('addr'),ok=document.getElementById('ok'),n=new Date();
 dt.min=n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0')+'-'+String(n.getDate()).padStart(2,'0');
 f.addEventListener('change',function(){});
